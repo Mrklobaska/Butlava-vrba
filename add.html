@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pridať príbeh – Butlavá Vrba</title>
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+  <!-- favicon (voliteľné) -->
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+  <!-- globálne štýly -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Špecifiká pre editor */
+    .editor{
+      min-height: calc(100svh - 64px);
+      padding: 20px; display:flex; flex-direction:column; gap:12px;
+      max-width: 980px; margin: 0 auto;
+    }
+    textarea{
+      flex:1; resize:none; font-size:18px; line-height:1.6; border-radius:16px;
+      border:1px solid var(--border); padding:16px; background: rgba(255,255,255, .65); color: var(--text);
+    }
+    .bar{display:flex; gap:10px; justify-content:space-between; align-items:center; flex-wrap:wrap}
+    .muted{color:var(--muted); font-size:12px}
+    .link-btn{
+      display:inline-block; padding:10px 14px; border-radius:12px; text-decoration:none;
+      border:1px solid var(--border); background: var(--card); color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .primary{
+      background: linear-gradient(135deg, var(--primary-soft), var(--primary)); color:#fff; border-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hlavička -->
+  <header class="header">
+    <a href="feed.html" class="brand">
+      <img src="assets/logo-icon.svg" alt="Logo" width="36" height="36">
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions">
+      <a class="link-btn" href="feed.html">Zatvoriť</a>
+    </nav>
+  </header>
+
+  <!-- Editor -->
+  <main class="editor">
+    <div class="bar">
+      <span class="muted">Napíš, čo máš na srdci. Text môže byť aj dlhý. Formátovanie povolené (odseky, **bold**, *italic*). Bez farieb.</span>
+      <span class="muted">Emoji sú povolené. Ak ich bude priveľa, pôjde to na ručné schválenie.</span>
+    </div>
+
+    <textarea id="story" placeholder="Začni písať svoj príbeh..." aria-label="Text tvojho príbehu"></textarea>
+
+    <div class="bar">
+      <span class="muted">Po odoslaní: príbeh bude čakať na schválenie adminom.</span>
+      <!-- Zatiaľ len presmerujeme na profil. Backend doplníme neskôr. -->
+      <a class="link-btn primary" href="profile.html" onclick="return mockSubmit()">Uverejniť</a>
+    </div>
+  </main>
+
+  <script>
+    // Jednoduchá simulácia odoslania – neskôr to napojíme na API
+    function mockSubmit(){
+      const t = document.getElementById('story').value.trim();
+      if(!t){
+        alert('Prosím, napíš svoj príbeh pred odoslaním.');
+        return false; // zabránime presmerovaniu
+      }
+      alert('Ďakujeme! Tvoj príbeh bol odoslaný a čaká na schválenie.');
+      // tu by šlo reálne odoslanie na server; zatiaľ necháme presmerovanie na profil
+      return true;
+    }
+  </script>
+</body>
+</html>

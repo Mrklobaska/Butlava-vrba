@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Vytvoriť účet – Butlavá Vrba</title>
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+  <link rel="icon" href="assets/logo-icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Špecifické drobnosti pre signup stránku (rovnaký look ako login) */
+    .auth-wrap{max-width:460px; margin:24px auto; padding:16px}
+    .auth-card{background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px}
+    .auth-logo{width:120px;height:120px;margin:8px auto 8px;display:block;opacity:.95}
+    .auth-title{text-align:center;margin:6px 0 12px}
+    .input{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+    .input input{padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--text)}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .grow{flex:1}
+    .muted{color:var(--muted);font-size:13px}
+    .link{color:var(--primary);text-decoration:none}
+    .actions a.btn{display:inline-block}
+  </style>
+</head>
+<body>
+  <!-- Hlavička -->
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Späť na úvod">
+      <img src="assets/logo-icon.svg" alt="Butlavá Vrba" />
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions" aria-label="Navigácia">
+      <a href="about.html">O projekte</a>
+      <a class="primary" href="login.html">Prihlásiť sa</a>
+    </nav>
+  </header>
+
+  <!-- Obsah -->
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <!-- Ilustrácia vrby (inline SVG – funguje aj bez obrázkov) -->
+      <svg class="auth-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#90c695"/>
+            <stop offset="100%" stop-color="#2f6b3b"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="none" stroke="url(#g)" stroke-width="4"/>
+        <g stroke="#2f6b3b" stroke-linecap="round" fill="none">
+          <path d="M60 86 C58 74 58 62 60 52 C62 62 62 74 60 86" stroke-width="3"/>
+          <path d="M60 46 C48 43 42 40 34 34" stroke-width="2.2" opacity=".9"/>
+          <path d="M60 46 C72 43 78 40 86 34" stroke-width="2.2" opacity=".9"/>
+          <path d="M42 36 C38 46 39 52 42 58" stroke-width="2" opacity=".85"/>
+          <path d="M50 38 C46 48 47 54 50 60" stroke-width="2" opacity=".85"/>
+          <path d="M70 38 C74 48 73 54 70 60" stroke-width="2" opacity=".85"/>
+          <path d="M78 36 C82 46 81 52 78 58" stroke-width="2" opacity=".85"/>
+        </g>
+      </svg>
+
+      <h2 class="auth-title">Vytvoriť účet</h2>
+
+      <form action="feed.html" method="get" novalidate>
+        <div class="input">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="napr. meno@email.com" required>
+        </div>
+        <div class="input">
+          <label for="pass1">Heslo</label>
+          <input id="pass1" type="password" placeholder="••••••••" required>
+        </div>
+        <div class="input">
+          <label for="pass2">Potvrdiť heslo</label>
+          <input id="pass2" type="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="row" style="margin-top:6px; align-items:center">
+          <a class="btn primary" href="feed.html" role="button">Vytvoriť účet</a>
+          <a class="btn" href="login.html" role="button">Už mám účet</a>
+        </div>
+
+        <p class="muted" style="margin-top:10px; text-align:center">
+          Overenie emailu pridáme neskôr (iba pri podozrivých účtoch).
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Butlavá Vrba — školský projekt (autor je anonymný)
+  </footer>
+</body>
+</html>

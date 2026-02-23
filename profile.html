@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Profil – Butlavá Vrba</title>
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+  <!-- favicon (voliteľné) -->
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml"/>
+  <!-- globálne štýly -->
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Drobné štýly pre profil */
+    .profile-header.card{
+      display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .profile-info{display:flex; flex-direction:column; gap:4px}
+    .profile-actions{display:flex; gap:10px; flex-wrap:wrap}
+  </style>
+</head>
+<body onload="initFeed('myfeed'); initPendingList('pending');">
+  <!-- Hlavička -->
+  <header class="header">
+    <a href="feed.html" class="brand">
+      <img src="assets/logo-icon.svg" alt="" width="36" height="36" />
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions">
+      <a href="add.html" class="btn">➕ Pridať príbeh</a>
+    </nav>
+  </header>
+
+  <!-- Profil karta: info + Odhlásiť sa -->
+  <section class="section">
+    <div class="card profile-header">
+      <div class="profile-info">
+        <div><strong>Profil</strong> – anonymný používateľ</div>
+        <div class="badge">Prezývka voliteľná (zmena max 1× za 30 dní)</div>
+      </div>
+      <div class="profile-actions">
+        <a href="index.html" class="btn" role="button">Odhlásiť sa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moje príbehy – fullscreen feed iba mojich textov -->
+  <section class="section">
+    <h3>Moje príbehy</h3>
+  </section>
+  <main class="feed-wrap" id="myfeed" aria-live="polite"></main>
+
+  <!-- Pending – jednoduchý textový zoznam -->
+  <section class="section">
+    <h3>Pending (čaká na schválenie)</h3>
+    <div class="list" id="pending"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

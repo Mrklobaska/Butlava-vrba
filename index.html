@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Butlavá Vrba</title> 
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+
+  <!-- Favicon / ikona (voliteľné) -->
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml" />
+
+  <!-- Prepojenie so štýlmi -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HLAVIČKA -->
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Butlavá Vrba – domov">
+      <img src="assets/logo-icon.svg" alt="Logo Butlavá Vrba" onerror="this.style.display='none'">
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions" aria-label="Hlavná navigácia">
+      <a href="about.html">O projekte</a>
+      <a class="primary" href="login.html">Prihlásiť sa</a>
+    </nav>
+  </header>
+
+  <!-- HERO S ILUSTRÁCIOU A SLOGANOM -->
+  <main class="hero">
+    <!-- Ak ešte nemáš súbor, ponecháme inline SVG ilustráciu vrby -->
+    <svg class="ill" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#90c695"/>
+          <stop offset="100%" stop-color="#2f6b3b"/>
+        </linearGradient>
+      </defs>
+      <circle cx="60" cy="60" r="56" fill="none" stroke="url(#g)" stroke-width="4"/>
+      <g stroke="#2f6b3b" stroke-linecap="round" fill="none">
+        <path d="M60 86 C58 74 58 62 60 52 C62 62 62 74 60 86" stroke-width="3"/>
+        <path d="M60 46 C48 43 42 40 34 34" stroke-width="2.2" opacity=".9"/>
+        <path d="M60 46 C72 43 78 40 86 34" stroke-width="2.2" opacity=".9"/>
+        <path d="M42 36 C38 46 39 52 42 58" stroke-width="2" opacity=".85"/>
+        <path d="M50 38 C46 48 47 54 50 60" stroke-width="2" opacity=".85"/>
+        <path d="M70 38 C74 48 73 54 70 60" stroke-width="2" opacity=".85"/>
+        <path d="M78 36 C82 46 81 52 78 58" stroke-width="2" opacity=".85"/>
+      </g>
+    </svg>
+
+    <h1>Tu ťa nikto nebude súdiť.</h1>
+    <p class="notice">
+      Bezpečné miesto, kde sa môžeš anonymne vyrozprávať. Pre všetkých, najmä pre teens.
+    </p>
+
+    <div class="cta-row" role="group" aria-label="Hlavné akcie">
+      <a class="btn primary" href="login.html">Prihlásiť sa / Začať</a>
+      <a class="btn" href="signup.html">Vytvoriť účet</a>
+      <a class="btn" href="feed.html">Prezrieť pár príbehov</a>
+    </div>
+  </main>
+
+  <!-- KRÁTKY POPIS FUNKČNOSTI -->
+  <section class="section">
+    <div class="card">
+      <h3 style="margin-top:0">Ako to funguje</h3>
+      <p class="notice">
+        Uvidíš pár náhodných príbehov. Potom ťa jemne vyzveme na prihlásenie, aby si mohol čítať ďalej a pridať vlastný príbeh.
+      </p>
+      <div class="cta-row" style="margin-top:12px">
+        <a class="btn" href="feed.html">Otvoriť náhľad feedu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIESTO PRE ANONYMNÝ FEEDBACK WIDGET -->
+  <section class="section" aria-label="Anonymná spätná väzba">
+    <div class="card">
+      <h3 style="margin-top:0">Anonymný feedback</h3>
+      <p class="notice">
+        V ostrej verzii bude v pravom dolnom rohu malé okno, kde môžeš anonymne poslať spätnú väzbu (bez mena a emailu).
+      </p>
+    </div>
+  </section>
+
+  <!-- PÄTIČKA -->
+  <footer>
+    © 2026 Butlavá Vrba — školský projekt (autor je anonymný)
+  </footer>
+
+  <!-- Jemný fade-in efekt pri načítaní -->
+  <script>
+    document.documentElement.style.opacity = "0";
+    document.addEventListener("DOMContentLoaded", () => {
+      document.documentElement.style.transition = "opacity .35s ease";
+      document.documentElement.style.opacity = "1";
+    });
+  </script>
+</body>
+</html>

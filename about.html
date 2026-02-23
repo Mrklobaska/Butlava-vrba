@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>O projekte – Butlavá Vrba</title>
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+  <!-- favicon (voliteľné) -->
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+  <!-- globálne štýly -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-wrap{max-width:980px; margin:24px auto; padding:0 16px;}
+    .about-card{background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px;}
+    .about-logo{width:120px;height:120px;margin:8px auto 12px;display:block;opacity:.95}
+    .about-grid{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:10px}
+    .about-item{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px; box-shadow:var(--shadow)}
+    .about-item h4{margin:0 0 6px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <!-- Hlavička -->
+  <header class="header">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-icon.svg" alt="" width="36" height="36">
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions" aria-label="Navigácia">
+      <a href="login.html">Prihlásiť sa</a>
+    </nav>
+  </header>
+
+  <!-- Obsah -->
+  <main class="about-wrap">
+    <div class="about-card">
+      <!-- Ilustrácia / logo -->
+      <svg class="about-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#90c695"/>
+            <stop offset="100%" stop-color="#2f6b3b"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="none" stroke="url(#g)" stroke-width="4"/>
+        <g stroke="#2f6b3b" stroke-linecap="round" fill="none">
+          <path d="M60 86 C58 74 58 62 60 52 C62 62 62 74 60 86" stroke-width="3"/>
+          <path d="M60 46 C48 43 42 40 34 34" stroke-width="2.2" opacity=".9"/>
+          <path d="M60 46 C72 43 78 40 86 34" stroke-width="2.2" opacity=".9"/>
+          <path d="M42 36 C38 46 39 52 42 58" stroke-width="2" opacity=".85"/>
+          <path d="M50 38 C46 48 47 54 50 60" stroke-width="2" opacity=".85"/>
+          <path d="M70 38 C74 48 73 54 70 60" stroke-width="2" opacity=".85"/>
+          <path d="M78 36 C82 46 81 52 78 58" stroke-width="2" opacity=".85"/>
+        </g>
+      </svg>
+
+      <h2 style="text-align:center; margin:4px 0 8px">O projekte</h2>
+      <p class="muted" style="text-align:center">
+        <strong>Butlavá Vrba</strong> je školský projekt vytvorený anonymným autorom. Cieľom je poskytnúť
+        bezpečný priestor, kde sa môže každý vyrozprávať bez strachu z posudzovania.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-item">
+          <h4>Ako funguje čítanie</h4>
+          <p class="muted">
+            Príbehy sa zobrazujú <strong>v náhodnom poradí</strong>, vždy jeden na celú obrazovku (ako Reels).
+            Môžeš listovať <strong>swipe hore/dole</strong> (mobil) alebo kolieskom (PC). Režim čítania zväčší písmo a odstráni pozadie.
+          </p>
+        </div>
+
+        <div class="about-item">
+          <h4>Pridávanie príbehov</h4>
+          <p class="muted">
+            Po prihlásení môžeš napísať anonymný textový príbeh. Formátovanie (odseky, <b>bold</b>, <i>italic</i>) je povolené,
+            <strong>farby nie</strong>. Emoji sú ok – ak ich je priveľa, príbeh pôjde na ručné schválenie.
+          </p>
+        </div>
+
+        <div class="about-item">
+          <h4>Anonymita</h4>
+          <p class="muted">
+            Môžeš si vytvoriť anonymnú prezývku alebo zverejňovať úplne <strong>bez mena</strong>.
+            Žiadne reakcie ani hodnotenia – cieľom je pokojné vyrozprávanie sa.
+          </p>
+        </div>
+
+        <div class="about-item">
+          <h4>Schvaľovanie</h4>
+          <p class="muted">
+            Nové príbehy schvaľuje <strong>admin</strong> (najprv ty; neskôr bude možné pridať adminov tajným kódom).
+            Zverejnené príbehy ostávajú <strong>natrvalo</strong>, kým ich niekto neodstráni.
+          </p>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px">
+        Pozn.: Neprihlásení uvidia len pár náhľadových príbehov, potom sa zobrazí výzva na prihlásenie.
+      </p>
+      <div class="cta-row" style="margin-top:8px">
+        <a class="btn" href="feed.html">Pozrieť príbehy</a>
+        <a class="btn primary" href="login.html">Prihlásiť sa</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Butlavá Vrba — školský projekt (tvorca je anonymný)
+  </footer>
+</body>
+</html>

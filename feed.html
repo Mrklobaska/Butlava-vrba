@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sk" class="bg-leaves">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Feed – Butlavá Vrba</title>
+<!-- Favicon (SVG) -->
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
+
+<!-- Voliteľné fallbacky (ak chceš, neskôr môžeš doplniť PNG) -->
+<!-- <link rel="icon" type="image/png" href="assets/logo-icon-64.png" sizes="64x64" /> -->
+<!-- <link rel="apple-touch-icon" href="assets/logo-icon-180.png" /> -->
+  <!-- favicon (voliteľné) -->
+  <link rel="icon" href="assets/logo-icon.svg">
+  <!-- globálne štýly -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Špecifické pre feed */
+    .feed-wrap{
+      height:100svh; width:100%;
+      display:flex; align-items:center; justify-content:center;
+      position:relative; overflow:hidden;
+    }
+    .story{
+      position:absolute; inset:0;
+      padding:18svh 20px 14svh;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+    .story .text{
+      font-size:clamp(18px, 2.8vw, 28px);
+      line-height:1.5;
+      max-width:780px; margin:0 auto;
+      white-space:pre-wrap;
+    }
+    .story .meta{
+      position:absolute; top:12px; right:16px;
+      font-size:12px; color:var(--muted); opacity:.7;
+      background:rgba(255,255,255,0.08);
+      padding:6px 8px; border-radius:10px;
+    }
+    .story .readmode{
+      position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+      font-size:13px; color:#fff;
+      background:linear-gradient(135deg, var(--primary-soft), var(--primary));
+      padding:8px 12px; border:none; border-radius:999px; box-shadow:var(--shadow);
+      cursor:pointer;
+    }
+
+    /* Read mode – čisté pozadie + väčší text */
+    .reading body, .reading .feed-wrap{ background: var(--card) }
+    .reading .bg-leaves::before, .reading .bg-leaves::after{ display:none }
+    .reading .story .text{ font-size:clamp(20px, 3.2vw, 34px); line-height:1.7 }
+  </style>
+</head>
+<body onload="initFeed('feed')">
+  <!-- Hlavička -->
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Späť na úvod">
+      <img src="assets/logo-icon.svg" alt="Logo" onerror="this.style.display='none'">
+      <strong>Butlavá Vrba</strong>
+    </a>
+    <nav class="actions">
+      <a href="add.html" class="primary">➕ Pridať príbeh</a>
+    </nav>
+  </header>
+
+  <!-- Jeden príbeh na obrazovke, Reels štýl -->
+  <main class="feed-wrap" id="feed" aria-live="polite"></main>
+
+  <!-- Skript (logika feedu) -->
+  <script src="app.js"></script>
+</body>
+</html>
